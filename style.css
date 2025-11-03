@@ -1,0 +1,217 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #000000;
+    --secondary: #181818;
+    --accent: #0066ff;
+    --text: #1a1a1a;
+    --light: #f5f5f5;
+    --border: #e0e0e0;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* RTL specific styles */
+[dir="rtl"] {
+    text-align: right;
+    font-family: 'Vazir', 'Inter', sans-serif;
+}
+
+[dir="rtl"] body,
+[dir="rtl"] * {
+    font-family: 'Vazir', 'Inter', sans-serif;
+}
+
+[dir="rtl"] .btn i {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+[dir="rtl"] .logo i {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+[dir="rtl"] .language-switcher {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+[dir="rtl"] .container {
+    direction: rtl;
+}
+
+[dir="ltr"] .container {
+    direction: ltr;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    opacity: 0.9;
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-switcher button {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-switcher button:hover {
+  background: #f5f5f5;
+}
+
+.language-switcher button.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Hover effects */
+.card:hover .card-img {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
